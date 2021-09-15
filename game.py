@@ -7,5 +7,19 @@ class ChessGame():
         self.black = black
         self.maxTurns = maxTurns
 
-    def play(self):
-        pass
+    """
+    Play chess with the bots.
+    
+    Returns:
+        0 - Draw = maximum turns reached
+        1 - White wins
+        -1 - Black wins
+    """
+    def play(self) -> int:
+        while True:
+            # TODO: Play whoever's turn it is
+            turn = self.board.turn
+
+            # TODO: Check if someone has won
+            if self.board.fullmove_number >= self.maxTurns or self.board.is_stalemate():
+                return 0
